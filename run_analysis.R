@@ -52,6 +52,7 @@ run_analysis <- function(){
   dt_molten <- dt_molten[, avg:= mean(value), by= list(Subject, Activity, variable)] 
   dt_molten <- dt_molten[, list(Subject, Activity, variable, avg)] #dropping the value column
   dt_molten <- unique(dt_molten) # removing duplicates
-  write.table(dt_molten, 'variable_means_by_activity_and_subject.table')
+  write.table(dt_molten, 'wariable_means_by_activity_and_subject.table', row.names=FALSE)
   dt_molten
 }
+
